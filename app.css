@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --clr-black: rgba(0, 0, 0, 0.815);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background: rgb(56, 56, 56);
+  color: white;
+  font-family: "Quicksand", sans-serif;
+}
+
+.container {
+  padding: 2em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: 1.5em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.word-reveal {
+  margin-top: 1em;
+  font-weight: 200;
+  font-size: 2em;
+}
+
+.lose-screen {
+  text-align: center;
+  display: none;
+}
+
+.you-lose {
+  font-weight: 200;
+  font-size: 3.5em;
+}
+
+.play-again-btn {
+  color: white;
+  border: 1px solid white;
+  border-radius: 0.5em;
+  margin-top: 2em;
+  font-size: 1.25em;
+  padding: 1rem 3rem;
+  background: none;
+  cursor: pointer;
+}
+
+.play-again-btn:hover {
+  background: rgb(35, 35, 35);
+}
+
+.win-screen {
+  text-align: center;
+  display: none;
+}
+
+.you-win {
+  font-weight: 200;
+  font-size: 3.5em;
+}
+
+.tip {
+  width: max-content;
+  color: rgb(194, 194, 194);
+  position: absolute;
+  top: 1em;
+  margin: 0 auto;
+  font-size: 1.25em;
+  transition: opacity 1s;
+}
+
+.guesses {
+  color: rgb(194, 194, 194);
+  text-align: center;
+  font-weight: 200;
+  font-size: 1.5em;
+  width: max-content;
+  margin: 0 auto;
+  letter-spacing: 0.1em;
+}
+
+.b {
+  width: max-content;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+}
+
+.word {
+  display: none;
+  text-align: center;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid rgb(99, 99, 99);
+}
+
+.word2 {
+  color: rgba(255, 255, 255, 0.851);
+  display: flex;
+  text-align: center;
+  font-weight: 200;
+  font-size: 2.5em;
+  margin: 2em 0em;
+  line-height: 0.75em;
+  padding-left: 0.33%;
+}
+
+.wrong-letters-wrapper {
+  color: rgb(194, 194, 194);
+  font-size: 2em;
+  display: block;
+  margin: 0 auto;
+}
+
+.already-guessed {
+  opacity: 0;
+  margin-top: 1em;
+  color: rgb(194, 194, 194);
+}

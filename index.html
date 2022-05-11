@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <link rel="stylesheet" href="app.css" />
+    <title>Challenge #21</title>
+  </head>
+  <body>
+    <div class="container win-screen">
+      <div class="you-win">YOU WON!</div>
+      <div class="word-reveal-win word-reveal"></div>
+      <button class="play-again-btn">Play Again</button>
+    </div>
+    <div class="container lose-screen">
+      <div class="you-lose">YOU LOST!</div>
+      <div class="word-reveal-loss word-reveal"></div>
+      <button class="play-again-btn">Play Again</button>
+    </div>
+    <div class="container main-container">
+      <div class="tip">TIP: Press any letter key</div>
+      <div class="guesses"></div>
+      <div class="b word"></div>
+      <div class="b word2"></div>
+      <span class="b wrong-letters-wrapper">
+        [
+        <span class="wrong-letters"></span>
+        ]
+      </span>
+      <div class="already-guessed">You've already guessed that letter!</div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
