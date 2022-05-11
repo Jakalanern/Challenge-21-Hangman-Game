@@ -16,7 +16,7 @@ fetch("https://puzzle.mead.io/puzzle?wordCount=1")
     let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     let wrongLettersArr = []
     let randomWord = data.puzzle
-    let guesses = randomWord.length * 1.5
+    let guesses = randomWord.length * 1.25
 
     word.innerHTML = randomWord
     guessScore.innerHTML = "Guesses: " + guesses
