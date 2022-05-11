@@ -58,7 +58,7 @@ fetch("https://puzzle.mead.io/puzzle?wordCount=1")
       str = str.toLowerCase()
       char = char.toLowerCase()
       let indices = []
-      if (guesses > 0) {
+      if (guesses > 1) {
         for (i = 0; i < str.length; i++) {
           if (str[i].includes(char)) {
             indices.push(i)
