@@ -7,6 +7,7 @@ fetch("https://puzzle.mead.io/puzzle?wordCount=1")
     return response.json()
   })
   .then(function (data) {
+    // VARIABLE
     let word = $(".word")
     let word2 = $(".word2")
     let wrongLetters = $(".wrong-letters")
@@ -16,12 +17,10 @@ fetch("https://puzzle.mead.io/puzzle?wordCount=1")
     let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     let wrongLettersArr = []
     let randomWord = data.puzzle
-    let guesses = randomWord.length * 1.25
-
+    let guesses = Math.floor(randomWord.length * 1.25) // Default: 1.25x
     word.innerHTML = randomWord
     guessScore.innerHTML = "Guesses: " + guesses
 
-    // VARIABLES
 
     // MAIN
 
