@@ -7,7 +7,7 @@ fetch("https://puzzle.mead.io/puzzle?wordCount=1")
     return response.json()
   })
   .then(function (data) {
-    // VARIABLE
+    // VARIABLES
     let word = $(".word")
     let word2 = $(".word2")
     let wrongLetters = $(".wrong-letters")
@@ -20,7 +20,6 @@ fetch("https://puzzle.mead.io/puzzle?wordCount=1")
     let guesses = Math.floor(randomWord.length * 1.25) // Default: 1.25x
     word.innerHTML = randomWord
     guessScore.innerHTML = "Guesses: " + guesses
-
 
     // MAIN
 
@@ -39,16 +38,21 @@ fetch("https://puzzle.mead.io/puzzle?wordCount=1")
         if (e.key === l) {
           // Add some padding if there's a letter showing inside the hidden answer
           if (allEqual(word2.innerHTML) === true) {
-            console.log("ALL EQUAL")
             word2.style.lineHeight = ".75em"
           } else {
-            console.log("NOT ALL EQUAL")
             word2.style.paddingBottom = ".25em"
           }
 
           // Fade away the tip at top of screen
           tip.style.opacity = 0
           checkIfContains(word.innerHTML, e.key)
+          if (guesses === 0) {
+            guessScore.innerHTML = "Guesses : " + guesses
+            setTimeout(function () {
+              lose()
+            }, 50)
+          }
+          console.log(guesses)
         }
       }
     })
@@ -65,14 +69,12 @@ fetch("https://puzzle.mead.io/puzzle?wordCount=1")
           }
           if (
             i === str.length - 1 &&
-            str.includes(char) === false &&
-            wrongLettersArr.includes(char) === false
+            !str.includes(char) &&
+            !wrongLettersArr.includes(char)
           ) {
             guesses--
             guessScore.innerHTML = "Guesses : " + guesses
             wrongLettersArr.push(char)
-            // Color the letters red
-            wrongLetters.style.color = "#b3b3b3"
             // Display the wrong letters on the page
             wrongLetters.innerHTML = `${wrongLettersArr}`
           } else if (wrongLettersArr.includes(char) === true) {
@@ -82,15 +84,7 @@ fetch("https://puzzle.mead.io/puzzle?wordCount=1")
             }, 750)
           }
         }
-      } else {
-        guesses--
-        guessScore.innerHTML = "Guesses : " + guesses
-        setTimeout(function () {
-          lose()
-        }, 50)
       }
-
-      // If the key === wrong letter: Alert
 
       if (indices.length > 0) {
         addMatchToString(word2.innerHTML, char, indices)
